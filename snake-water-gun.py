@@ -1,74 +1,425 @@
 import random
-lst = ['s','w','g']
 
-chance = 10
-no_of_chance = 0
-computer_point = 0
-human_point = 0
+gap="                                                                                 "
+# list of choices
+choice=["stone","paper","scissors"]
+# wins,losses and tie
+tie="tie! no one gets any point\n"
+win="user got a point!\n"
+lose="computer got a point!\n"
+# variables
+no_of_chances=10
+chances=0
+computerkapoint=0
+playerkapoint=0
+# functions
+print("choose- stone,paper or scissors")
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+        if user=='stone':
+                pass
+        if user=='scissor':
+                pass
+        if user=='paper':
+                pass
+        else:
+                print('no such command')
+                playerkapoint-=1
 
-print(" \t \t \t \t Snake,Water,Gun Game\n \n")
-print("s for snake \nw for water \ng for gun \n")
 
-# making the game in while
-while no_of_chance < chance:
-    _input = input('Snake,Water,Gun:')
-    _random = random.choice(lst)
 
-    print('') # Printing a new line
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
 
-    if _input == _random:
-        print("Tie Both 0 point to each\n")
+if user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    # if user enter s
-    elif _input == "s" and _random == "g":
-        computer_point = computer_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("computer wins 1 point \n")
+elif user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    elif _input == "s" and _random == "w":
-        human_point = human_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("Human wins 1 point \n")
+elif user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    # if user enter w
-    elif _input == "w" and _random == "s":
-        computer_point = computer_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("computer wins 1 point \n")
+#lose conditions
 
-    elif _input == "w" and _random == "g":
-        human_point = human_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("Human wins 1 point \n")
-    # if user enter g
+elif computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    elif _input == "g" and _random == "s":
-        human_point = human_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("Human wins 1 point \n")
+elif computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    elif _input == "g" and _random == "w":
-        computer_point = computer_point + 1
-        print(f"your guess {_input} and computer guess is {_random}")
-        print("computer wins 1 point \n")
-    else:
-        print("you have input wrong \n")
-    
-    print(f"computer_point is {computer_point} and your point is {human_point} ")
+elif computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
 
-    no_of_chance = no_of_chance + 1
-    print(f"{chance - no_of_chance} is left out of {chance}\n")
 
-print("Game over")
+#game exit and game over condition
 
-if computer_point > human_point:
-    print("Computer wins and you loose")
+if chances>no_of_chances:
+        print("game over")
+        if playerkapoint>computerkapoint:
+                print("you win!")
+                
+        else:
+                print("you loose, computer won!")
 
-elif computer_point < human_point:
-    print("you win and computer loose")
+#2
+                
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+else:
+        print("no such command")
 
-elif computer_point == human_point:
-    print("No one win, no one loose")
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
 
-print(f"your point is {human_point} and computer point is {computer_point}")
+if user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+#lose conditions
+
+elif computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+
+#game exit and game over condition
+
+if chances>no_of_chances:
+        print("game over")
+        if playerkapoint>computerkapoint:
+                print("you win!")
+                
+        else:
+                print("you loose, computer won!")
+
+
+
+#3
+
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+else:
+        print("no such command")
+
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
+
+elif user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+#lose conditions
+
+elif computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+elif computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+
+#unknown
+
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+else:
+        print("no such command")
+
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
+
+if user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+#lose conditions
+
+if computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+
+
+
+
+#4
+
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+else:
+        print("no such command")
+
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
+
+if user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+#lose conditions
+
+if computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+
+#game exit and game over condition
+
+if chances>no_of_chances:
+        print("game over")
+        if playerkapoint>computerkapoint:
+                print("you win!")
+                
+        else:
+                print("you loose, computer won!")
+
+
+#5
+
+if chances<no_of_chances:
+        user=input()
+        computer=random.choice(choice)
+        print("computer's choice:-",computer)
+        chances +=1
+else:
+        print("no such command")
+
+        
+               
+# tie condition
+if user==computer:
+	print(tie)
+	
+#win conditions
+
+if user=="stone" and computer=="scissors":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="paper" and computer=="stone":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if user=="scissors" or "scissor" and computer=="paper":
+        print(win)
+        playerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+#lose conditions
+
+if computer=="stone" and user=="scissors":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="paper" and user=="stone":
+        print(lose)
+        computerkapoint += 1  
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+if computer=="scissors" or "scissor" and user=="paper":
+        print(lose)
+        computerkapoint += 1
+        print("users point is:-",playerkapoint)
+        print("computer's point is:-",computerkapoint)
+
+
+#game exit and game over condition
+
+if chances>no_of_chances:
+        print("game over")
+        if playerkapoint>computerkapoint:
+                print("you win!")
+                
+        else:
+                print("you loose, computer won!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
